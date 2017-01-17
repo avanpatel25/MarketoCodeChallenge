@@ -17,6 +17,8 @@ public class CodeChallenge {
 		jsonObject = JsonConfigReader.readFile(new File("resources/leads.json"));
 		List<Leads> leadsList = dedupLeads((JSONArray) jsonObject.get("leads"));
 		writeOutput(leadsList);
+		jsonObject = JsonConfigReader.readFile(new File("resources/output.json"));
+		System.out.println(jsonObject);
 	}
 	
 	private static List<Leads> dedupLeads(JSONArray rawLeads) {
